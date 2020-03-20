@@ -13,7 +13,7 @@ FEATURES
     * open editor for file
 3. Search for notes file by title
 4. Search for notes file by content (deep search)
-5. Delete notes files and folders
+5. Delete notes files
 
 USAGE
 notesman create [subdirectory] [filename] [extension]
@@ -46,15 +46,10 @@ _latex_template = r"""
 \begin{document}
 \maketitle
 
-\begin{abstract}
-This is the paper's abstract \ldots
-\end{abstract}
-
 \section{Introduction}
-This is time for all good men to come to the aid of their party!
+Some Introduction goes here
 
 \end{document}
-This is never printed
 """
 
 _markdown_template = r"""#{title}
@@ -132,7 +127,7 @@ def open_editor(path_relative_to_root, filename, extension):
     # if file already exists, throw options
     if os.path.isfile(full_path):
 
-        choice = int(input("File Already Exists! 1 - Overwrite, 2 - open for editing >>> "))
+        choice = int(input(f"{bcolors.WARNING}File Already Exists! 1 - Overwrite, 2 - open for editing >>> {bcolors.ENDC}"))
 
         if choice == 2:
 
