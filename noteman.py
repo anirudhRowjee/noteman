@@ -2,7 +2,6 @@
 
 '''
 Script to generate and manage notes
-parse arguments with argparse
 
 FEATURES
 1. Read presets for directory of notes
